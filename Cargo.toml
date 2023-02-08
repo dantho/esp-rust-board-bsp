@@ -4,17 +4,17 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-esp32c3-hal = "0.5.0"
+esp32c3-hal   = { version = "0.5.0" }
 esp-backtrace = { version = "0.4.0", features = ["esp32c3", "exception-handler", "panic-handler", "print-uart"] }
 esp-println   = { version = "0.3.0", features = ["esp32c3"] }
 icm42670      = { version = "0.1.0",  optional = true }
 riscv-rt      = { version = "0.11",   optional = true }
-shared-bus    = { version = "0.2.4",  optional = true, features = ["xtensa"] }
-shtcx         = { version = "0.10.0", optional = true }
+shared-bus    = { version = "0.2.4",  optional = true }
+shtcx         = { version = "0.11.0", optional = true }
 smart-leds    = { version = "0.3.0",  optional = true }
 
 [features]
-default  = ["rt", "sensors", "smartled"]
+default  = ["sensors", "smartled", "rt"]
 sensors  = ["icm42670", "shared-bus", "shtcx"]
 smartled = ["esp32c3-hal/smartled", "smart-leds"]
 rt = ["riscv-rt"]
