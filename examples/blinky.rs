@@ -3,14 +3,14 @@
 
 use esp_rust_board::{
     esp32c3_hal::{
-        clock::ClockControl, gpio::IO, pac::Peripherals, prelude::*, timer::TimerGroup, Delay, Rtc,
+        clock::ClockControl, gpio::IO, peripherals::Peripherals, prelude::*, timer::TimerGroup, Delay, Rtc,
     },
     esp_backtrace as _, println,
 };
 
 #[riscv_rt::entry]
 fn main() -> ! {
-    let peripherals = Peripherals::take().unwrap();
+    let peripherals = Peripherals::take();
     let system = peripherals.SYSTEM.split();
     let clocks = ClockControl::boot_defaults(system.clock_control).freeze();
 

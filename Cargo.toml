@@ -12,7 +12,8 @@ riscv-rt      = { version = "0.11",   optional = true }
 shared-bus    = { version = "0.2.4",  optional = true }
 shtcx         = { version = "0.11.0", optional = true }
 smart-leds    = { version = "0.3.0",  optional = true }
-
+owo-colors = "3.5.0"
+micromath = "2.0.0"
 [features]
 default  = ["sensors", "smartled", "rt"]
 sensors  = ["icm42670", "shared-bus", "shtcx"]

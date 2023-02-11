@@ -4,7 +4,7 @@
 use esp_rust_board::{
     esp32c3_hal::{
         clock::ClockControl,
-        pac::Peripherals,
+        peripherals::Peripherals,
         prelude::*,
         pulse_control::ClockSource,
         timer::TimerGroup,
@@ -21,7 +21,7 @@ use esp_rust_board::{
 
 #[riscv_rt::entry]
 fn main() -> ! {
-    let peripherals = Peripherals::take().unwrap();
+    let peripherals = Peripherals::take();
     let mut system = peripherals.SYSTEM.split();
     let clocks = ClockControl::boot_defaults(system.clock_control).freeze();
 
