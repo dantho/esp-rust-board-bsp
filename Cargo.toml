@@ -7,7 +7,8 @@ edition = "2021"
 esp32c3-hal   = { version = "0.5.0" }
 esp-backtrace = { version = "0.4.0", features = ["esp32c3", "exception-handler", "panic-handler", "print-uart"] }
 esp-println   = { version = "0.3.0", features = ["esp32c3"] }
-icm42670      = { version = "0.1.0",  optional = true }
+# icm42670      = { version = "0.1.0",  optional = true }
+icm42670      = { version = "0.1.0", optional = true, path = "../icm42670"}
 riscv-rt      = { version = "0.11",   optional = true }
 shared-bus    = { version = "0.2.4",  optional = true }
 shtcx         = { version = "0.11.0", optional = true }
